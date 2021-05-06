@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .style-for-div{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+
+        .span-for-div{
+            padding-bottom: 20px;
+        }
+
+        .image{
+            padding-top: 20px;
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+        }
+    </style>
+
+</head>
+<body>
+<script src="https://unpkg.com/react@16.13.1/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
+<script type="text/babel">
+
+    function createSpan({children}){
+        return <span className="span-for-div">{children}</span>
+    }
+
+    function createInput({}){
+        return <input type="text"/>
+    }
+
+    function createImg({name}){
+        return <img className="image" src={name+".jpg"}/>
+    }
+
+    const setSpan = React.createElement(createSpan,{
+        children: 'Текст в span',
+    });
+
+    const setInput = React.createElement(createInput,{});
+
+    const setImg = React.createElement(createImg,{
+        name:"1",
+    });
+
+    const mainDiv = (
+        <div className="style-for-div">
+            {setSpan}
+            {setInput}
+            {setImg}
+        </div>
+    )
+    ReactDOM.render(mainDiv, document.getElementById('root'));
+
+</script>
+<div id="root"></div>
+</body>
+</html>

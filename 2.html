@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+    .style-for-div{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+
+    .span-for-div{
+      padding-bottom: 20px;
+    }
+
+    .image{
+      padding-top: 20px;
+      width: 200px;
+      height: 200px;
+      background-size: cover;
+    }
+  </style>
+
+</head>
+<body>
+<script src="https://unpkg.com/react@16.13.1/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.9.3/babel.js"></script>
+<script type="text/babel">
+  const root = document.getElementById('root');
+
+  const mainDiv = React.createElement('div',{
+    className: "style-for-div",
+    children: [
+            React.createElement('span',{key:0, className: "span-for-div"},'Текст в span'),
+            React.createElement('input', {key:1}),
+            React.createElement('img', {key:2, className: "image", src: "1.jpg"}),
+    ]
+  });
+
+  ReactDOM.render(mainDiv,root);
+</script>
+
+<div id="root"></div>
+
+
+
+</body>
+</html>

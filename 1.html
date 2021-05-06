@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .style-for-div{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
+
+        .span-for-div{
+            padding-bottom: 20px;
+        }
+
+        .image{
+            padding-top: 20px;
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+    const root = document.getElementById('root');
+
+    const mainDiv = document.createElement('div');
+    const spanForDiv = document.createElement('span');
+    const inputForDiv = document.createElement('input');
+    const imageForDiv =document.createElement('img');
+
+    mainDiv.setAttribute('class','style-for-div');
+
+    spanForDiv.innerText = 'Текст в span';
+    spanForDiv.setAttribute('class', 'span-for-div');
+    mainDiv.append(spanForDiv);
+
+    inputForDiv.setAttribute('type','text');
+    mainDiv.append(inputForDiv);
+
+    imageForDiv.setAttribute('class',`image`);
+    imageForDiv.setAttribute('src',`1.jpg`);
+    mainDiv.append(imageForDiv);
+
+    root.append(mainDiv);
+</script>
+</body>
+</html>
